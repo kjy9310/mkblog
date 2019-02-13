@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-    use Notifiable;
+    // use Notifiable;
 
     /**
      * The attributes that are mass assignable.

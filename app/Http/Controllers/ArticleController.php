@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Article;
 
 class ArticleController extends Controller
 {
@@ -30,4 +31,20 @@ class ArticleController extends Controller
             return abort(404);
         }
     }
+
+    public function create(Request $request)
+    {
+        if(!$request->user()->is_admin){
+            return abort(404);
+        }
+        $data = $request->only('title','content','category_id');
+        $article = new Article;
+        $article->content=$data['content'];
+        $article->title=$data['title'];
+        $article->user_id=$request->user()->id;
+        $article->category_id=$data['category_id'];
+        $article->save();
+        return redirect('article');
+    }
+
 }
