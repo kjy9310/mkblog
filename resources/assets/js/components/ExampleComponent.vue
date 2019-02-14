@@ -15,6 +15,7 @@
 </template>
 
 <script>
+    import Vue from 'vue'
     export default {
         mounted() {
             console.log('Component mounted.')
