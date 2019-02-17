@@ -53,3 +53,10 @@ if (token) {
 //     cluster: 'mt1',
 //     encrypted: true
 // });
+
+import ApolloClient from 'apollo-boost'
+
+window.apolloClient = new ApolloClient({
+  // You should use an absolute URL here
+  uri: 'http://localhost:8000/graphql'
+})

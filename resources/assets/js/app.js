@@ -21,12 +21,19 @@ window.Vue = require('vue');
 //     el: '#app'
 // });
 
+// apollo for graphql
+import VueApollo from 'vue-apollo'
+Vue.use(VueApollo)
+
 // import vue router
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
+const apolloProvider = new VueApollo({
+    defaultClient: apolloClient,
+})
 
 // import routes list
 import routes from './routes.js';
 const router = new VueRouter({ mode: 'history', routes: routes});
 
-new Vue(Vue.util.extend({ router })).$mount('#app');
+new Vue(Vue.util.extend({ router,apolloProvider })).$mount('#app');
