@@ -28,6 +28,10 @@ class ArticleType extends BaseType
                 'type' => Type::string(),
                 'description' => 'The content of article',
             ],
+            // 'created_at'=>[
+            //     'type'=> Type::float(),
+            //     'description'=> 'created_at'
+            // ],
             'user' => [
                 'type' => GraphQL::type('UserType'),
                 'description' => 'The user of article',
