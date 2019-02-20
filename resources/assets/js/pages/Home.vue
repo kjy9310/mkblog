@@ -1,7 +1,7 @@
 <template>
     <div>
-        <articleComp v-bind:article_id ="article_id"></articleComp>
         <list @changeArticle=changeArticle></list>
+        <articleComp v-bind:article_id ="article_id"></articleComp>
     </div>
 </template>
 
@@ -24,7 +24,6 @@
         },
         methods:{
             changeArticle(val){
-                console.log(val)
                 this.article_id=parseInt(val)
             }
         }
