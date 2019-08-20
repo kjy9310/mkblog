@@ -19,6 +19,10 @@ class CreateCategoriesTable extends Migration
             $table->boolean('is_admin');
             $table->timestamps();
         });
+        \DB::table('categories')->insert([
+            'name' => 'test',
+            'is_admin'=> true
+        ]);
     }
 
     /**
